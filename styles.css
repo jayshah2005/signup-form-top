@@ -82,6 +82,7 @@ fieldset{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
 }
 
 input{
@@ -102,6 +103,17 @@ input:focus-visible{
 input:invalid{
     border: 1px solid red;
 }
+
+input + span::before {
+    position: absolute;
+    top: 110px
+  }
+
+input:invalid + span::before{
+    content: "*Please enter a valid email";
+    color: red;
+    font-size: 0.6rem;
+  }
 
 button[type="submit"]{
     width: 150px;
